@@ -1,6 +1,6 @@
 <launch>
   <arg name="config_path" default = "$(find air_slam)/configs/map_refinement/mr_euroc.yaml" />
-  <arg name="map_root" default = "$(find air_slam)/debug/test" />
+  <arg name="map_root" default = "$(find air_slam)/debug" />
   <arg name="model_dir" default = "$(find air_slam)/output" />
   <arg name="voc_path" default = "$(find air_slam)/voc/point_voc_L4.bin" />
   <arg name="breakpoint" default="0"/>

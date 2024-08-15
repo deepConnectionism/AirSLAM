@@ -1,0 +1,24 @@
+<launch>
+    <arg name="config_path" default = "$(find air_slam)/configs/visual_odometry/vo_euroc.yaml" />
+    <arg name="camera_config_path" default = "$(find air_slam)/configs/camera/euroc.yaml" />
+    <arg name="model_dir" default = "$(find air_slam)/output" />
+    <arg name="saving_dir" default = "$(find air_slam)/debug" />
+    <arg name="traj_path" default = "$(find air_slam)/debug/traj.txt" />
+    <arg name="left_topic" default = "/cam0/image_raw" />
+    <arg name="right_topic" default = "/cam1/image_raw" />
+    <arg name="imu_topic" default = "/imu0" />
+
+    <node name="ros_visual_odometry" pkg="air_slam" type="ros_visual_odometry" output="screen">
+      <param name="config_path" type="string" value="$(arg config_path)" />
+      <param name="camera_config_path" type="string" value="$(arg camera_config_path)" />
+      <param name="model_dir" type="string" value="$(arg model_dir)" />
+      <param name="saving_dir" type="string" value="$(arg saving_dir)" />
+      <param name="traj_path" type="string" value="$(arg traj_path)" />
+      <param name="left_topic" type="string" value="$(arg left_topic)" />
+      <param name="right_topic" type="string" value="$(arg right_topic)" />
+      <param name="imu_topic" type="string" value="$(arg imu_topic)" />
+    </node>
+    
+    <!-- Visualization -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find air_slam)/configs/euroc.rviz" output="screen" />
+</launch>		

@@ -105,6 +105,9 @@ target_link_libraries(${PROJECT_NAME}_lib
 add_executable(visual_odometry demo/visual_odometry.cpp)
 target_link_libraries(visual_odometry ${PROJECT_NAME}_lib ${catkin_LIBRARIES})
 
+add_executable(ros_visual_odometry demo/ros_visual_odometry.cpp)
+target_link_libraries(ros_visual_odometry ${PROJECT_NAME}_lib ${catkin_LIBRARIES})
+
 add_executable(map_refinement demo/map_refinement.cpp)
 target_link_libraries(map_refinement ${PROJECT_NAME}_lib ${catkin_LIBRARIES})
 
